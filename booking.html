@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Availability &amp; Booking — GlowMora Beauty | Austin, TX Makeup Artist</title>
+  <meta name="description" content="Check availability and book your GlowMora Beauty appointment — bridal, soft glam, full glam, special events & photoshoots in Austin, Texas.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0809'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-style='italic' font-size='34' fill='%23e8a98f' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ====== SVG sprite (shared with index.html) ====== -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f7d4c8"/>
+        <stop offset=".5" stop-color="#e8a98f"/>
+        <stop offset="1" stop-color="#cd7f69"/>
+      </linearGradient>
+    </defs>
+
+    <symbol id="brush" viewBox="0 0 560 170" preserveAspectRatio="none">
+      <g fill="url(#rg)">
+        <path d="M22 96 C18 78 40 62 78 52 C150 32 260 26 360 32 C448 38 520 50 540 70 C552 82 548 98 526 110 C470 138 360 150 256 148 C160 146 60 138 34 118 C26 112 24 104 22 96 Z"/>
+        <path d="M70 44 C160 24 300 18 420 28 C470 32 510 40 530 50 C480 42 380 36 290 38 C200 40 120 46 70 56 Z" opacity=".55"/>
+        <path d="M40 124 C120 142 260 152 380 146 C300 158 160 156 80 142 Z" opacity=".5"/>
+        <circle cx="12" cy="84" r="5" opacity=".8"/>
+        <circle cx="548" cy="120" r="4" opacity=".7"/>
+        <circle cx="540" cy="34" r="3" opacity=".6"/>
+      </g>
+    </symbol>
+
+    <symbol id="splat" viewBox="0 0 320 320">
+      <g fill="url(#rg)">
+        <circle cx="30" cy="40" r="3"/><circle cx="60" cy="22" r="5" opacity=".8"/><circle cx="92" cy="50" r="2.5" opacity=".7"/>
+        <circle cx="22" cy="90" r="7" opacity=".9"/><circle cx="70" cy="86" r="3.5" opacity=".6"/><circle cx="120" cy="30" r="2" opacity=".5"/>
+        <circle cx="44" cy="140" r="10" opacity=".85"/><circle cx="100" cy="120" r="4" opacity=".5"/><circle cx="150" cy="70" r="3" opacity=".45"/>
+        <circle cx="26" cy="200" r="5" opacity=".7"/><circle cx="80" cy="180" r="6" opacity=".55"/><circle cx="140" cy="150" r="2.5" opacity=".4"/>
+        <circle cx="60" cy="250" r="12" opacity=".8"/><circle cx="120" cy="230" r="5" opacity=".5"/><circle cx="180" cy="200" r="3" opacity=".35"/>
+        <circle cx="40" cy="300" r="6" opacity=".6"/><circle cx="110" cy="290" r="8" opacity=".45"/><circle cx="170" cy="265" r="4" opacity=".3"/>
+        <ellipse cx="90" cy="60" rx="14" ry="4" transform="rotate(-25 90 60)" opacity=".35"/>
+        <ellipse cx="50" cy="180" rx="18" ry="5" transform="rotate(-60 50 180)" opacity=".3"/>
+      </g>
+    </symbol>
+
+    <symbol id="face" viewBox="0 0 440 560">
+      <g fill="none" stroke="url(#rg)" stroke-linecap="round" stroke-linejoin="round">
+
+        <!-- ══ BOLD BRUSH STROKE — upper left ══ -->
+        <path stroke="url(#rg)" stroke-width="26" stroke-linecap="butt" fill="none" opacity=".38"
+          d="M -12 105 C 18 92 55 88 90 98"/>
+        <path stroke="url(#rg)" stroke-width="14" stroke-linecap="butt" fill="none" opacity=".60"
+          d="M -8 120 C 25 107 60 105 92 113"/>
+        <path stroke="url(#rg)" stroke-width="7"  stroke-linecap="round" fill="none" opacity=".48"
+          d="M  0  133 C 32 121 64 119 90 126"/>
+        <path stroke="url(#rg)" stroke-width="3"  stroke-linecap="round" fill="none" opacity=".34"
+          d="M  6  143 C 36 133 65 131 88 137"/>
+
+        <!-- ══ MASSIVE GLITTER CLOUD — upper right ══ -->
+        <circle fill="url(#rg)" stroke="none" cx="358" cy="68"  r="18" opacity=".44"/>
+        <circle fill="url(#rg)" stroke="none" cx="396" cy="48"  r="15" opacity=".50"/>
+        <circle fill="url(#rg)" stroke="none" cx="376" cy="98"  r="14" opacity=".52"/>
+        <circle fill="url(#rg)" stroke="none" cx="418" cy="70"  r="13" opacity=".46"/>
+        <circle fill="url(#rg)" stroke="none" cx="402" cy="28"  r="12" opacity=".52"/>
+        <circle fill="url(#rg)" stroke="none" cx="432" cy="50"  r="13" opacity=".40"/>
+        <circle fill="url(#rg)" stroke="none" cx="426" cy="104" r="11" opacity=".48"/>
+        <circle fill="url(#rg)" stroke="none" cx="336" cy="50"  r="10" opacity=".40"/>
+        <circle fill="url(#rg)" stroke="none" cx="330" cy="94"  r="12" opacity=".38"/>
+        <circle fill="url(#rg)" stroke="none" cx="364" cy="34"  r="8"  opacity=".70"/>
+        <circle fill="url(#rg)" stroke="none" cx="440" cy="82"  r="8"  opacity=".62"/>
+        <circle fill="url(#rg)" stroke="none" cx="312" cy="66"  r="7"  opacity=".54"/>
+        <circle fill="url(#rg)" stroke="none" cx="348" cy="118" r="8"  opacity=".50"/>
+        <circle fill="url(#rg)" stroke="none" cx="412" cy="122" r="7"  opacity=".46"/>
+        <circle fill="url(#rg)" stroke="none" cx="440" cy="34"  r="6"  opacity=".54"/>
+        <circle fill="url(#rg)" stroke="none" cx="390" cy="132" r="6"  opacity=".46"/>
+        <circle fill="url(#rg)" stroke="none" cx="440" cy="116" r="7"  opacity=".38"/>
+        <circle fill="url(#rg)" stroke="none" cx="318" cy="36"  r="6"  opacity=".62"/>
+        <circle fill="url(#rg)" stroke="none" cx="300" cy="86"  r="5"  opacity=".48"/>
+        <circle fill="url(#rg)" stroke="none" cx="352" cy="20"  r="5"  opacity=".60"/>
+        <circle fill="url(#rg)" stroke="none" cx="420" cy="18"  r="5"  opacity=".52"/>
+        <circle fill="url(#rg)" stroke="none" cx="294" cy="52"  r="4"  opacity=".56"/>
+        <circle fill="url(#rg)" stroke="none" cx="384" cy="144" r="4"  opacity=".52"/>
+        <circle fill="url(#rg)" stroke="none" cx="430" cy="138" r="3.5" opacity=".46"/>
+        <circle fill="url(#rg)" stroke="none" cx="308" cy="116" r="3.5" opacity=".44"/>
+        <circle fill="url(#rg)" stroke="none" cx="284" cy="70"  r="3.5" opacity=".50"/>
+        <circle fill="url(#rg)" stroke="none" cx="338" cy="12"  r="3"  opacity=".56"/>
+        <circle fill="url(#rg)" stroke="none" cx="412" cy="8"   r="3"  opacity=".50"/>
+        <circle fill="url(#rg)" stroke="none" cx="268" cy="88"  r="2.5" opacity=".42"/>
+        <circle fill="url(#rg)" stroke="none" cx="440" cy="158" r="3"  opacity=".34"/>
+        <circle fill="url(#rg)" stroke="none" cx="396" cy="154" r="2.5" opacity=".42"/>
+        <circle fill="url(#rg)" stroke="none" cx="276" cy="50"  r="2"  opacity=".46"/>
+        <circle fill="url(#rg)" stroke="none" cx="326" cy="130" r="2.5" opacity=".40"/>
+        <path fill="url(#rg)" stroke="none" opacity=".98"
+          d="M 372 42 l 6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6 Z"/>
+        <path fill="url(#rg)" stroke="none" opacity=".92"
+          d="M 410 78 l 4.2 11.4 11.4 4.2 -11.4 4.2 -4.2 11.4 -4.2 -11.4 -11.4 -4.2 11.4 -4.2 Z"/>
+        <path fill="url(#rg)" stroke="none" opacity=".80"
+          d="M 338 76 l 3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/>
+        <path fill="url(#rg)" stroke="none" opacity=".74"
+          d="M 424 44 l 2.6 7 7 2.6 -7 2.6 -2.6 7 -2.6 -7 -7 -2.6 7 -2.6 Z"/>
+        <path fill="url(#rg)" stroke="none" opacity=".64"
+          d="M 354 130 l 2 5.5 5.5 2 -5.5 2 -2 5.5 -2 -5.5 -5.5 -2 5.5 -2 Z"/>
+
+        <!-- ══ HAIR ══ -->
+        <path stroke-width="3.2" d="M 165 52 C 210 32 272 28 318 46 C 360 62 386 96 390 140 C 394 184 378 230 360 270 C 342 310 322 348 317 392"/>
+        <path stroke-width="3.2" d="M 165 52 C 134 64 106 86 90 118 C 76 148 76 184 86 218"/>
+        <path stroke-width="2"   opacity=".65" d="M 172 50 C 220 28 278 24 322 42"/>
+        <path stroke-width="1.5" opacity=".50" d="M 186 48 C 236 24 297 20 344 38"/>
+        <path stroke-width="1.2" opacity=".38" d="M 200 48 C 254 22 318 18 364 38"/>
+
+        <!-- ══ FACE CONTOUR ══ -->
+        <path stroke-width="3.2" d="M 86 218 C 80 250 78 284 86 313 C 94 342 112 364 136 378 C 160 392 188 394 213 386 C 238 378 254 358 262 333 C 270 308 266 280 254 256"/>
+
+        <!-- ══ NECK ══ -->
+        <path stroke-width="2.8" d="M 156 378 C 150 404 146 432 148 460 L 150 486"/>
+        <path stroke-width="2.8" d="M 206 388 C 213 414 216 442 214 466 L 212 486"/>
+        <path stroke-width="1.6" opacity=".36" d="M 103 490 L 150 490 M 212 490 L 344 490"/>
+
+        <!-- ══ EYEBROW — very bold ══ -->
+        <path stroke-width="8" stroke-linecap="round"
+          d="M 88 200 C 116 164 162 152 210 162 C 235 168 250 184 240 197"/>
+        <path stroke-width="3.5" stroke-linecap="round" opacity=".35"
+          d="M 86 206 C 114 169 161 156 210 166 C 236 172 251 188 240 202"/>
+
+        <!-- ══ EYE ══ -->
+        <path stroke-width="4.2"
+          d="M 92 224 C 124 204 170 198 218 208 C 240 214 249 230 234 246 C 202 264 154 266 104 249 C 91 243 88 232 92 224 Z"/>
+        <ellipse cx="166" cy="224" rx="22" ry="18" stroke-width="3"   opacity=".90"/>
+        <ellipse cx="166" cy="224" rx="11" ry="10" stroke-width="2.2" opacity=".72"/>
+        <circle  cx="158" cy="218" r="5" fill="url(#rg)" stroke="none" opacity=".80"/>
+
+        <!-- ══ LASHES — dramatic thick waterfall ══ -->
+        <path stroke-width="4.5" d="M  98 246 C  88 280  76 316  64 350"/>
+        <path stroke-width="4.8" d="M 116 257 C 106 293  98 330  92 366"/>
+        <path stroke-width="5"   d="M 135 263 C 127 301 121 338 119 372"/>
+        <path stroke-width="5.2" d="M 154 268 C 148 307 145 344 145 378"/>
+        <path stroke-width="5.2" d="M 174 269 C 171 308 170 345 172 379"/>
+        <path stroke-width="5"   d="M 193 267 C 194 306 198 342 205 376"/>
+        <path stroke-width="4.8" d="M 212 261 C 216 299 224 335 234 368"/>
+        <path stroke-width="4.5" d="M 228 252 C 235 289 246 324 259 356"/>
+        <path stroke-width="4"   d="M 242 241 C 252 278 265 312 280 343"/>
+
+        <!-- lower lashes -->
+        <path stroke-width="1.8" opacity=".50" d="M 120 252 L 115 270"/>
+        <path stroke-width="1.8" opacity=".50" d="M 146 261 L 141 279"/>
+        <path stroke-width="1.7" opacity=".44" d="M 174 266 L 170 284"/>
+
+        <!-- ══ NOSE ══ -->
+        <path stroke-width="2.8" d="M 148 290 C 138 310 128 332 126 350 C 124 364 131 376 145 380 C 159 383 175 376 182 362"/>
+        <path stroke-width="2"   opacity=".62" d="M 142 377 C 150 387 164 390 175 386 C 186 382 191 370 188 358"/>
+
+        <!-- ══ LIPS ══ -->
+        <path stroke-width="3.8" d="M 126 406 C 141 390 160 385 181 387 C 202 389 220 402 228 417"/>
+        <path stroke-width="2.7" d="M 126 406 C 137 395 154 391 167 392"/>
+        <path stroke-width="3.6" d="M 126 406 C 135 428 154 440 178 440 C 201 440 220 427 228 411 L 228 417"/>
+        <path stroke-width="2.2" opacity=".68" d="M 126 406 C 157 414 197 413 228 406"/>
+
+        <!-- ══ SPARKLES near brow ══ -->
+        <path fill="url(#rg)" stroke="none" opacity=".94"
+          d="M 262 176 l 4.5 12 12 4.5 -12 4.5 -4.5 12 -4.5 -12 -12 -4.5 12 -4.5 Z"/>
+        <path fill="url(#rg)" stroke="none" opacity=".78"
+          d="M 290 210 l 2.8 7.5 7.5 2.8 -7.5 2.8 -2.8 7.5 -2.8 -7.5 -7.5 -2.8 7.5 -2.8 Z"/>
+        <circle fill="url(#rg)" stroke="none" cx="248" cy="152" r="5"   opacity=".68"/>
+        <circle fill="url(#rg)" stroke="none" cx="278" cy="166" r="3"   opacity=".50"/>
+        <circle fill="url(#rg)" stroke="none" cx="272" cy="143" r="2.2" opacity=".40"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3.5 16.5 5 8.5l4.2 3.6L12 5.5l2.8 6.6L19 8.5l1.5 8z"/><path d="M5.5 19.5h13"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.3-9C1.4 7.8 3.2 4.9 6.4 4.9c2 0 3.4 1.1 4.1 2.3.2.4.8.4 1 0 .7-1.2 2.1-2.3 4.1-2.3 3.2 0 5 2.9 3.7 6.1C19.5 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 6.1L20 11l-6.1 1.9L12 19l-1.9-6.1L4 11l6.1-1.9z"/><path d="M18.6 3.2l.7 2.2 2.2.7-2.2.7-.7 2.2-.7-2.2-2.2-.7 2.2-.7z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.5-6.5-10A6.5 6.5 0 0 1 18.5 11c0 4.5-6.5 10-6.5 10z"/><circle cx="12" cy="11" r="2.4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.6v5.1c0 4.6-3 8.6-7 10.3-4-1.7-7-5.7-7-10.3V5.6z"/><path d="M9 11.5l2.1 2.1L15.5 9"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8 13h2M14 13h2M8 16.5h2M14 16.5h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5.5" y="10.5" width="13" height="9.5" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l1.5 4.5L8 10c1 2.5 3.5 5 6 6l1.5-2.5L20 15v4c0 .6-.4 1-1 1C9.6 19.4 4.6 14.4 4 5c0-.6.4-1 1-1z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 4v9.5a3.8 3.8 0 1 1-3.2-3.7"/><path d="M14 5.5c.7 2 2.3 3.3 4.5 3.5"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.5-3h-2.9V9.2c0-.9.3-1.5 1.6-1.5h1.4V5.1C16.2 5 15.3 5 14.4 5 12 5 10.4 6.4 10.4 9v2H8v3h2.4v7"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3.5" y="7" width="17" height="13" rx="2.5"/><path d="M8.5 7l1.5-2.5h4L15.5 7"/><circle cx="12" cy="13.3" r="3.4"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5.5" y="5" width="13" height="16" rx="2"/><path d="M9 5a3 3 0 0 1 6 0"/><path d="M8.5 10.5h7M8.5 14h7M8.5 17.5h4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></symbol>
+  </svg>
+
+  <!-- ====== ANNOUNCEMENT BAR ====== -->
+  <div class="announce">
+    <span class="announce-msg"><svg class="ic ic-xs"><use href="#i-heart"/></svg> Now booking bridals &amp; special events</span>
+    <span class="announce-social">
+      <a href="https://instagram.com/glowmora" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic ic-xs"><use href="#i-ig"/></svg></a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic ic-xs"><use href="#i-tiktok"/></svg></a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic ic-xs"><use href="#i-fb"/></svg></a>
+    </span>
+  </div>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header" id="top">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">
+        <svg class="brush brush-logo" viewBox="0 0 560 170" preserveAspectRatio="none" aria-hidden="true"><use href="#brush"/></svg>
+        <span class="logo-script">GlowMora <span class="logo-heart">♡</span></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a class="active" href="booking.html">Booking</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a class="btn btn-rose btn-small" href="#booking-form">Book Now <span class="heart">♡</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ====== PAGE HERO ====== -->
+    <section class="page-hero">
+      <svg class="splat splat-tl" aria-hidden="true"><use href="#splat"/></svg>
+      <div class="container">
+        <h1 class="page-title">Availability <span class="script-accent">&amp;</span> Booking</h1>
+        <p class="lede">Select your preferred date and time to check availability.</p>
+        <div class="heart-divider" aria-hidden="true"><span></span><svg class="ic ic-xs"><use href="#i-heart"/></svg><span></span></div>
+        <ul class="mini-features">
+          <li><svg class="ic ic-sm"><use href="#i-cal"/></svg> Easy online booking</li>
+          <li><svg class="ic ic-sm"><use href="#i-lock"/></svg> Secure your date</li>
+          <li><svg class="ic ic-sm"><use href="#i-heart"/></svg> Tailored to you</li>
+          <li><svg class="ic ic-sm"><use href="#i-sparkle"/></svg> Experience the glow</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====== CALENDAR + TIMES ====== -->
+    <section class="section booking-section">
+      <div class="container">
+        <div class="booking-panel reveal">
+          <div class="cal-side">
+            <h2 class="panel-title"><svg class="ic"><use href="#i-cal"/></svg> <span class="script-accent">Select a Date</span></h2>
+            <div class="cal-nav">
+              <button type="button" id="cal-prev" aria-label="Previous month">‹</button>
+              <p id="cal-month-label">June 2026</p>
+              <button type="button" id="cal-next" aria-label="Next month">›</button>
+            </div>
+            <div class="cal-weekdays" aria-hidden="true">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="cal-grid" id="cal-grid"><!-- days injected by booking.js --></div>
+            <ul class="cal-legend">
+              <li><span class="leg leg-open"></span> Available</li>
+              <li><span class="leg leg-booked">✕</span> Booked</li>
+              <li><span class="leg leg-selected">♡</span> Selected</li>
+            </ul>
+            <div class="inquiry-note">
+              <svg class="ic"><use href="#i-cal"/></svg>
+              <div>
+                <p class="script-sm">Don't see your date?</p>
+                <p>Send an inquiry — I may be available!</p>
+              </div>
+            </div>
+          </div>
+          <div class="times-side">
+            <h2 class="panel-title"><svg class="ic"><use href="#i-clock"/></svg> <span class="script-accent">Available Times</span></h2>
+            <p class="times-date" id="times-date">Select a date to see times</p>
+            <div class="times-grid" id="times-grid"><!-- slots injected by booking.js --></div>
+            <div class="avail-guide">
+              <h3>Availability Guide</h3>
+              <ul>
+                <li><span class="leg leg-open"></span><div><strong>Available</strong><span>Open for booking</span></div></li>
+                <li><span class="leg leg-booked">✕</span><div><strong>Booked</strong><span>Not available</span></div></li>
+                <li><span class="leg leg-selected">♡</span><div><strong>Selected</strong><span>Your chosen date/time</span></div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== FORM + POLICIES ====== -->
+        <div class="book-wrap">
+          <div class="book-card reveal" id="booking-form-card">
+            <div class="book-head">
+              <h2><span class="heart">♡</span> <span class="script-accent">Let's Book Your Glow</span></h2>
+              <p>Please fill out the form below to secure your appointment.</p>
+            </div>
+            <form id="booking-form">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Full Name <i>*</i></label>
+                  <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone Number <i>*</i></label>
+                  <input type="tel" id="phone" name="phone" placeholder="(210) 555-1439" autocomplete="tel" required>
+                </div>
+                <div class="field">
+                  <label for="email">Email Address <i>*</i></label>
+                  <input type="email" id="email" name="email" placeholder="youremail@example.com" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label for="service">Service Type <i>*</i></label>
+                  <select id="service" name="service" required>
+                    <option value="" selected disabled>Select a service</option>
+                    <option>Bridal Makeup</option>
+                    <option>Soft Glam</option>
+                    <option>Full Glam</option>
+                    <option>Special Event</option>
+                    <option>Photoshoot</option>
+                    <option>Something else</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="date-input">Appointment Date <i>*</i></label>
+                  <input type="text" id="date-input" name="date" placeholder="Pick a date on the calendar" readonly required>
+                </div>
+                <div class="field">
+                  <label for="time-select">Appointment Time <i>*</i></label>
+                  <select id="time-select" name="time" required>
+                    <option value="" selected disabled>Select a time</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="event-type">Event Type <i>*</i></label>
+                  <select id="event-type" name="event-type" required>
+                    <option value="" selected disabled>Select event type</option>
+                    <option>Wedding</option>
+                    <option>Engagement</option>
+                    <option>Quinceañera</option>
+                    <option>Birthday</option>
+                    <option>Gala / Formal</option>
+                    <option>Photoshoot</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="location">Location / Address <i>*</i></label>
+                  <input type="text" id="location" name="location" placeholder="Your location (city, state)" required>
+                </div>
+                <div class="field">
+                  <label for="photo-input">Inspiration Photo <small>(optional)</small></label>
+                  <label class="upload-box" for="photo-input">
+                    <svg class="ic ic-sm"><use href="#i-camera"/></svg>
+                    <span id="photo-label">Upload a photo<br><small>PNG, JPG up to 10MB</small></span>
+                  </label>
+                  <input type="file" id="photo-input" name="photo" accept="image/png,image/jpeg" hidden>
+                </div>
+                <div class="field full">
+                  <label for="notes">Additional Notes <small>(optional)</small></label>
+                  <textarea id="notes" name="notes" rows="4" placeholder="Tell me about your event, skin concerns, or any special requests..."></textarea>
+                </div>
+              </div>
+              <div class="center-cta">
+                <button type="submit" class="btn btn-rose">Request to Book <span class="heart">♡</span></button>
+              </div>
+              <p class="form-note"><svg class="ic ic-xs"><use href="#i-lock"/></svg> Your information is secure and will never be shared.</p>
+            </form>
+            <div class="form-success" hidden>
+              <span class="success-mark" aria-hidden="true">♡</span>
+              <h3>Request received!</h3>
+              <p>Thank you, beautiful — I'll confirm your date and send deposit details within 24 hours.</p>
+            </div>
+          </div>
+
+          <aside class="policy-card reveal">
+            <h2 class="panel-title"><svg class="ic"><use href="#i-clip"/></svg> <span class="script-accent">Booking Information</span></h2>
+            <div class="policy">
+              <h3>Deposit Policy</h3>
+              <p>A non-refundable deposit is required to secure your date. The remaining balance is due on the day of your appointment.</p>
+            </div>
+            <div class="heart-divider" aria-hidden="true"><span></span><svg class="ic ic-xs"><use href="#i-heart"/></svg><span></span></div>
+            <div class="policy">
+              <h3>Travel Policy</h3>
+              <p>Travel is included within 15 miles. Additional travel fee may apply outside this range.</p>
+            </div>
+            <div class="heart-divider" aria-hidden="true"><span></span><svg class="ic ic-xs"><use href="#i-heart"/></svg><span></span></div>
+            <div class="policy">
+              <h3>Cancellation Policy</h3>
+              <p>Please allow 48 hours notice for cancellations or rescheduling. Deposits are non-refundable.</p>
+            </div>
+            <div class="policy policy-cta">
+              <h3>Questions?</h3>
+              <p>Text or call me anytime!</p>
+              <a class="btn btn-rose btn-block" href="tel:+12105591439"><svg class="ic ic-sm"><use href="#i-phone"/></svg> (210) 559-1439</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FEATURE STRIP ====== -->
+    <div class="container strip-gap">
+      <ul class="features reveal">
+        <li><svg class="ic"><use href="#i-crown"/></svg><span>Professional<br>Makeup Artistry</span></li>
+        <li><svg class="ic"><use href="#i-heart"/></svg><span>Enhancing<br>Natural Beauty</span></li>
+        <li><svg class="ic"><use href="#i-sparkle"/></svg><span>Long Lasting<br>Flawless Finish</span></li>
+        <li><svg class="ic"><use href="#i-pin"/></svg><span>Traveling<br>To You</span></li>
+        <li><svg class="ic"><use href="#i-shield"/></svg><span>Premium Products<br>&amp; Hygiene</span></li>
+      </ul>
+    </div>
+
+    <!-- ====== INSTAGRAM STRIP ====== -->
+    <section class="ig-strip">
+      <div class="container ig-inner">
+        <div class="ig-label">
+          <p>Follow my journey</p>
+          <span class="heart">♥</span>
+          <a href="https://instagram.com/glowmora" target="_blank" rel="noopener"><svg class="ic ic-sm"><use href="#i-ig"/></svg> @GlowMora</a>
+        </div>
+        <div class="ig-row" aria-hidden="true">
+          <a class="ig-tile g1" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g2" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
+          <a class="ig-tile g3" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g4" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
+          <a class="ig-tile g5" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g6" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
+          <a class="ig-tile g7" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g8" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
+          <a class="ig-tile g9" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brush-title brush-title-left">
+          <svg class="brush" viewBox="0 0 560 170" preserveAspectRatio="none" aria-hidden="true"><use href="#brush"/></svg>
+          <span class="script-md">GlowMora <span class="logo-heart">♡</span></span>
+        </div>
+        <p class="footer-tag">Beauty &amp; Makeup Artistry</p>
+      </div>
+      <nav class="footer-col" aria-label="Quick links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="booking.html">Bridal Makeup</a>
+        <a href="booking.html">Soft Glam</a>
+        <a href="booking.html">Full Glam</a>
+        <a href="booking.html">Special Events</a>
+        <a href="booking.html">Photoshoots</a>
+      </div>
+      <div class="footer-col footer-connect">
+        <h4>Let's Connect</h4>
+        <a href="tel:+12105591439"><svg class="ic ic-sm"><use href="#i-phone"/></svg> (210) 559-1439</a>
+        <a href="mailto:fatima006h@gmail.com"><svg class="ic ic-sm"><use href="#i-mail"/></svg> fatima006h@gmail.com</a>
+        <a href="https://instagram.com/glowmora" target="_blank" rel="noopener"><svg class="ic ic-sm"><use href="#i-ig"/></svg> @GlowMora</a>
+        <span><svg class="ic ic-sm"><use href="#i-pin"/></svg> Austin, Texas &amp; Surrounding Areas</span>
+      </div>
+      <div class="footer-thanks">
+        <p class="script-md">Thank you <span class="logo-heart">♡</span></p>
+        <p>For supporting my business!</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> GlowMora Beauty &amp; Makeup Artistry. All Rights Reserved.</p>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <a class="chat-bubble" href="sms:+12105591439" aria-label="Text GlowMora">
+    <svg class="ic"><use href="#i-chat"/></svg>
+    <span>Let's chat!</span>
+  </a>
+
+  <script src="script.js"></script>
+  <script src="booking.js"></script>
+</body>
+</html>
