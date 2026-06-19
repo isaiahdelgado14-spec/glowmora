@@ -1,0 +1,26 @@
+# GlowMora Beauty — Netlify config
+# Lets visitors reach pages without the ".html" (e.g. /booking).
+
+[[redirects]]
+  from = "/booking"
+  to = "/booking.html"
+  status = 200
+
+[[redirects]]
+  from = "/home"
+  to = "/index.html"
+  status = 200
+
+# Anything unrecognized falls back to the home page.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Sensible security headers for a static site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
