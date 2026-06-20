@@ -988,6 +988,9 @@ body.nav-open .nav-toggle span:nth-child(2) { transform: translateY(-4px) rotate
   color: var(--muted);
 }
 
+/* Generic hide utility — lets the `hidden` attribute reliably toggle sections (e.g. Reviews) on/off */
+[hidden] { display: none !important; }
+
 .quotes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
