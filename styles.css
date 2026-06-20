@@ -1815,18 +1815,41 @@ body.nav-open .nav-toggle span:nth-child(2) { transform: translateY(-4px) rotate
   margin-bottom: 24px;
 }
 
-.gcal-frame {
-  display: block;
-  width: 100%;
-  min-height: 720px;
-  border: 0;
-  border-radius: 16px;
-  background: #fff;
-  /* Google's booking widget is a locked cross-origin iframe (can't restyle its insides),
-     so we flip its rendered output to a dark theme. invert(0.94) lands the white
-     background on the site's near-black (~#0f) instead of pure #000 so it matches the
-     surrounding card; the small hue-rotate warms Google's blue accents toward rose-gold. */
-  filter: invert(0.94) hue-rotate(-15deg);
+/* On-brand booking CTA — replaces the inline Google embed so the page stays 100% on-theme.
+   The button opens Google's scheduler in a new tab (the only way to fully match the colors). */
+.gcal-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 24px 12px 12px;
+}
+
+.gcal-highlights {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  color: var(--cream);
+  font-size: 1.02rem;
+}
+
+.gcal-highlights li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gcal-highlights .ic {
+  color: var(--rose-300);
+  flex: none;
+}
+
+.gcal-cta-note {
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .gcal-placeholder {
