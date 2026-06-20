@@ -749,11 +749,9 @@ body.nav-open .nav-toggle span:nth-child(2) { transform: translateY(-4px) rotate
   transform: translateY(10%);
 }
 
-.ph-1 { background: radial-gradient(140px 140px at 70% 18%, rgba(232, 169, 143, 0.3), transparent 70%), linear-gradient(165deg, #41232a, #160d10); }
-.ph-2 { background: radial-gradient(140px 140px at 30% 18%, rgba(232, 169, 143, 0.26), transparent 70%), linear-gradient(165deg, #3b2820, #150e0c); }
-.ph-3 { background: radial-gradient(140px 140px at 70% 22%, rgba(232, 169, 143, 0.28), transparent 70%), linear-gradient(165deg, #2e1c2c, #120c14); }
-.ph-4 { background: radial-gradient(140px 140px at 32% 20%, rgba(232, 169, 143, 0.26), transparent 70%), linear-gradient(165deg, #402620, #150d0c); }
-.ph-5 { background: radial-gradient(140px 140px at 68% 20%, rgba(232, 169, 143, 0.28), transparent 70%), linear-gradient(165deg, #2a1d24, #100c10); }
+.ph-1, .ph-2, .ph-3, .ph-4, .ph-5 {
+  background: linear-gradient(165deg, #f7d4c8 0%, #e8a98f 38%, #3a1f24 76%, #130c0f 100%);
+}
 
 .card-icon {
   position: relative;
@@ -982,6 +980,12 @@ body.nav-open .nav-toggle span:nth-child(2) { transform: translateY(-4px) rotate
 /* ---------- Reviews ---------- */
 .testimonials {
   overflow: hidden;
+}
+
+.review-cta p {
+  max-width: 460px;
+  margin: 0 auto 16px;
+  color: var(--muted);
 }
 
 .quotes-grid {
@@ -1801,6 +1805,58 @@ body.nav-open .nav-toggle span:nth-child(2) { transform: translateY(-4px) rotate
 .policy-cta {
   text-align: center;
   margin-top: 22px;
+}
+
+/* ---------- Google Appointment Scheduling embed ---------- */
+.gcal-card .book-head {
+  margin-bottom: 24px;
+}
+
+.gcal-frame {
+  display: block;
+  width: 100%;
+  min-height: 720px;
+  border: 0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+}
+
+.gcal-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  padding: 54px 28px;
+  border: 1.5px dashed var(--line);
+  border-radius: 16px;
+}
+
+.gcal-placeholder .script-sm {
+  font-size: 1.9rem;
+  color: var(--rose-300);
+}
+
+.gcal-placeholder p {
+  max-width: 380px;
+  color: var(--muted);
+}
+
+.gcal-placeholder .btn {
+  margin-top: 6px;
+}
+
+.gcal-fallback {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.gcal-fallback a {
+  color: var(--rose-300);
+  white-space: nowrap;
 }
 
 /* ---------- Scroll-reveal animation ---------- */

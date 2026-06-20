@@ -193,7 +193,7 @@
   <div class="announce">
     <span class="announce-msg"><svg class="ic ic-xs"><use href="#i-heart"/></svg> Now booking bridals &amp; special events</span>
     <span class="announce-social">
-      <a href="https://instagram.com/glowmora" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic ic-xs"><use href="#i-ig"/></svg></a>
+      <a href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic ic-xs"><use href="#i-ig"/></svg></a>
       <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic ic-xs"><use href="#i-tiktok"/></svg></a>
       <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic ic-xs"><use href="#i-fb"/></svg></a>
     </span>
@@ -242,132 +242,22 @@
       </div>
     </section>
 
-    <!-- ====== CALENDAR + TIMES ====== -->
+    <!-- ====== BOOKING (Google Appointment Scheduling) ====== -->
     <section class="section booking-section">
       <div class="container">
-        <div class="booking-panel reveal">
-          <div class="cal-side">
-            <h2 class="panel-title"><svg class="ic"><use href="#i-cal"/></svg> <span class="script-accent">Select a Date</span></h2>
-            <div class="cal-nav">
-              <button type="button" id="cal-prev" aria-label="Previous month">‹</button>
-              <p id="cal-month-label">June 2026</p>
-              <button type="button" id="cal-next" aria-label="Next month">›</button>
-            </div>
-            <div class="cal-weekdays" aria-hidden="true">
-              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-            </div>
-            <div class="cal-grid" id="cal-grid"><!-- days injected by booking.js --></div>
-            <ul class="cal-legend">
-              <li><span class="leg leg-open"></span> Available</li>
-              <li><span class="leg leg-booked">✕</span> Booked</li>
-              <li><span class="leg leg-selected">♡</span> Selected</li>
-            </ul>
-            <div class="inquiry-note">
-              <svg class="ic"><use href="#i-cal"/></svg>
-              <div>
-                <p class="script-sm">Don't see your date?</p>
-                <p>Send an inquiry — I may be available!</p>
-              </div>
-            </div>
-          </div>
-          <div class="times-side">
-            <h2 class="panel-title"><svg class="ic"><use href="#i-clock"/></svg> <span class="script-accent">Available Times</span></h2>
-            <p class="times-date" id="times-date">Select a date to see times</p>
-            <div class="times-grid" id="times-grid"><!-- slots injected by booking.js --></div>
-            <div class="avail-guide">
-              <h3>Availability Guide</h3>
-              <ul>
-                <li><span class="leg leg-open"></span><div><strong>Available</strong><span>Open for booking</span></div></li>
-                <li><span class="leg leg-booked">✕</span><div><strong>Booked</strong><span>Not available</span></div></li>
-                <li><span class="leg leg-selected">♡</span><div><strong>Selected</strong><span>Your chosen date/time</span></div></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- ====== FORM + POLICIES ====== -->
         <div class="book-wrap">
-          <div class="book-card reveal" id="booking-form-card">
+          <div class="book-card gcal-card reveal">
             <div class="book-head">
               <h2><span class="heart">♡</span> <span class="script-accent">Let's Book Your Glow</span></h2>
-              <p>Please fill out the form below to secure your appointment.</p>
+              <p>Pick a time that works for you — your appointment books straight onto my calendar with instant confirmation.</p>
             </div>
-            <form id="booking-form">
-              <div class="form-grid">
-                <div class="field">
-                  <label for="name">Full Name <i>*</i></label>
-                  <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required>
-                </div>
-                <div class="field">
-                  <label for="phone">Phone Number <i>*</i></label>
-                  <input type="tel" id="phone" name="phone" placeholder="(210) 555-1439" autocomplete="tel" required>
-                </div>
-                <div class="field">
-                  <label for="email">Email Address <i>*</i></label>
-                  <input type="email" id="email" name="email" placeholder="youremail@example.com" autocomplete="email" required>
-                </div>
-                <div class="field">
-                  <label for="service">Service Type <i>*</i></label>
-                  <select id="service" name="service" required>
-                    <option value="" selected disabled>Select a service</option>
-                    <option>Bridal Makeup</option>
-                    <option>Soft Glam</option>
-                    <option>Full Glam</option>
-                    <option>Special Event</option>
-                    <option>Photoshoot</option>
-                    <option>Something else</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="date-input">Appointment Date <i>*</i></label>
-                  <input type="text" id="date-input" name="date" placeholder="Pick a date on the calendar" readonly required>
-                </div>
-                <div class="field">
-                  <label for="time-select">Appointment Time <i>*</i></label>
-                  <select id="time-select" name="time" required>
-                    <option value="" selected disabled>Select a time</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="event-type">Event Type <i>*</i></label>
-                  <select id="event-type" name="event-type" required>
-                    <option value="" selected disabled>Select event type</option>
-                    <option>Wedding</option>
-                    <option>Engagement</option>
-                    <option>Quinceañera</option>
-                    <option>Birthday</option>
-                    <option>Gala / Formal</option>
-                    <option>Photoshoot</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="location">Location / Address <i>*</i></label>
-                  <input type="text" id="location" name="location" placeholder="Your location (city, state)" required>
-                </div>
-                <div class="field">
-                  <label for="photo-input">Inspiration Photo <small>(optional)</small></label>
-                  <label class="upload-box" for="photo-input">
-                    <svg class="ic ic-sm"><use href="#i-camera"/></svg>
-                    <span id="photo-label">Upload a photo<br><small>PNG, JPG up to 10MB</small></span>
-                  </label>
-                  <input type="file" id="photo-input" name="photo" accept="image/png,image/jpeg" hidden>
-                </div>
-                <div class="field full">
-                  <label for="notes">Additional Notes <small>(optional)</small></label>
-                  <textarea id="notes" name="notes" rows="4" placeholder="Tell me about your event, skin concerns, or any special requests..."></textarea>
-                </div>
-              </div>
-              <div class="center-cta">
-                <button type="submit" class="btn btn-rose">Request to Book <span class="heart">♡</span></button>
-              </div>
-              <p class="form-note"><svg class="ic ic-xs"><use href="#i-lock"/></svg> Your information is secure and will never be shared.</p>
-            </form>
-            <div class="form-success" hidden>
-              <span class="success-mark" aria-hidden="true">♡</span>
-              <h3>Request received!</h3>
-              <p>Thank you, beautiful — I'll confirm your date and send deposit details within 24 hours.</p>
-            </div>
+
+            <!-- GlowMora booking — Google Appointment Scheduling embed (Fatimah's calendar, glowmora234@gmail.com) -->
+            <iframe class="gcal-frame"
+              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1UM6eiUpcTo-LjoY0oYAYFDBUV98rLrsagtSbPCcXZNFHtbUwiWwNGvAxUNc8h_5TuQ2lgnfh7?gv=true"
+              title="Book a GlowMora appointment" loading="lazy"></iframe>
+            <p class="gcal-fallback">Trouble loading the calendar? Text <a href="sms:+12105591439">(210)&nbsp;559-1439</a> and I'll book you in.</p>
+
           </div>
 
           <aside class="policy-card reveal">
@@ -413,18 +303,18 @@
         <div class="ig-label">
           <p>Follow my journey</p>
           <span class="heart">♥</span>
-          <a href="https://instagram.com/glowmora" target="_blank" rel="noopener"><svg class="ic ic-sm"><use href="#i-ig"/></svg> @GlowMora</a>
+          <a href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener"><svg class="ic ic-sm"><use href="#i-ig"/></svg> @glowmora.beauty</a>
         </div>
         <div class="ig-row" aria-hidden="true">
-          <a class="ig-tile g1" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
-          <a class="ig-tile g2" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
-          <a class="ig-tile g3" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
-          <a class="ig-tile g4" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
-          <a class="ig-tile g5" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
-          <a class="ig-tile g6" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
-          <a class="ig-tile g7" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
-          <a class="ig-tile g8" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
-          <a class="ig-tile g9" href="https://instagram.com/glowmora" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g1" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g2" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
+          <a class="ig-tile g3" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g4" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
+          <a class="ig-tile g5" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g6" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
+          <a class="ig-tile g7" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
+          <a class="ig-tile g8" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>♡</span></a>
+          <a class="ig-tile g9" href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener" tabindex="-1"><span>✦</span></a>
         </div>
       </div>
     </section>
@@ -461,8 +351,8 @@
       <div class="footer-col footer-connect">
         <h4>Let's Connect</h4>
         <a href="tel:+12105591439"><svg class="ic ic-sm"><use href="#i-phone"/></svg> (210) 559-1439</a>
-        <a href="mailto:fatima006h@gmail.com"><svg class="ic ic-sm"><use href="#i-mail"/></svg> fatima006h@gmail.com</a>
-        <a href="https://instagram.com/glowmora" target="_blank" rel="noopener"><svg class="ic ic-sm"><use href="#i-ig"/></svg> @GlowMora</a>
+        <a href="mailto:glowmora234@gmail.com"><svg class="ic ic-sm"><use href="#i-mail"/></svg> glowmora234@gmail.com</a>
+        <a href="https://instagram.com/glowmora.beauty" target="_blank" rel="noopener"><svg class="ic ic-sm"><use href="#i-ig"/></svg> @glowmora.beauty</a>
         <span><svg class="ic ic-sm"><use href="#i-pin"/></svg> Austin, Texas &amp; Surrounding Areas</span>
       </div>
       <div class="footer-thanks">
@@ -482,6 +372,6 @@
   </a>
 
   <script src="script.js"></script>
-  <script src="booking.js"></script>
+  <!-- booking.js (custom fake calendar) detached — booking now handled by the Google Appointment Scheduling embed above -->
 </body>
 </html>
