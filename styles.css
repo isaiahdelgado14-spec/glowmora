@@ -1823,8 +1823,9 @@ body.nav-open .nav-toggle span:nth-child(2) { transform: translateY(-4px) rotate
   border-radius: 16px;
   background: #fff;
   /* Google's booking widget is a locked cross-origin iframe (can't restyle its insides),
-     so we flip its rendered output to a dark theme to blend with the site. */
-  filter: invert(1) hue-rotate(180deg);
+     so we flip its rendered output to a dark theme. The small hue-rotate warms Google's
+     blue accents toward the site's rose-gold/peach so it blends in. */
+  filter: invert(1) hue-rotate(-15deg);
 }
 
 .gcal-placeholder {
