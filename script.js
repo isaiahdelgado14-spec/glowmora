@@ -61,7 +61,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // ---------- New-client offer popup ----------
 const offerModal = document.getElementById('offer-modal');
 if (offerModal) {
-  const OFFER_KEY = 'glowmora-offer-seen';
+  const OFFER_KEY = 'glowmora-offer-signup'; // set ONLY after they sign up — so it keeps showing until then
   const openOffer = () => {
     offerModal.hidden = false;
     document.body.style.overflow = 'hidden';
@@ -69,9 +69,9 @@ if (offerModal) {
   const closeOffer = () => {
     offerModal.hidden = true;
     document.body.style.overflow = '';
-    localStorage.setItem(OFFER_KEY, '1');
+    // NOTE: closing does NOT set the flag, so it shows again next visit until they sign up
   };
-  // Show once per visitor, 2s after the page loads
+  // Show 2s after page load on EVERY visit, until they sign up
   if (!localStorage.getItem(OFFER_KEY)) {
     setTimeout(openOffer, 2000);
   }
