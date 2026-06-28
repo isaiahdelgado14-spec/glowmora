@@ -524,6 +524,31 @@
     </div>
   </footer>
 
+  <!-- ====== NEW-CLIENT OFFER POPUP ====== -->
+  <div class="offer-modal" id="offer-modal" hidden>
+    <div class="offer-backdrop" data-offer-close></div>
+    <div class="offer-card" role="dialog" aria-modal="true" aria-labelledby="offer-title">
+      <button class="offer-close" type="button" aria-label="Close offer" data-offer-close>&times;</button>
+      <p class="offer-eyebrow">New client offer <span class="heart">♡</span></p>
+      <h2 class="offer-title" id="offer-title"><span class="offer-big">50% OFF</span><br>Your First Appointment</h2>
+      <p class="offer-sub">Sign up and get half off your first GlowMora look — plus first dibs on future offers &amp; bridal dates.</p>
+      <form class="offer-form" name="signup" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="signup">
+        <p class="offer-hp"><label>Leave this empty: <input name="bot-field"></label></p>
+        <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+        <input type="email" name="email" placeholder="Your email" autocomplete="email" required>
+        <button type="submit" class="btn btn-rose btn-block">Claim My 50% Off <span class="heart">♡</span></button>
+        <button type="button" class="offer-decline" data-offer-close>No thanks, maybe later</button>
+      </form>
+      <div class="offer-success" hidden>
+        <span class="offer-success-mark">♡</span>
+        <h3>You're in, beautiful!</h3>
+        <p>Use code <strong>GLOW50</strong> when you book your first appointment for <strong>50% off</strong>. Watch your inbox for future GlowMora offers!</p>
+        <a class="btn btn-rose" href="booking.html">Book Now <span class="heart">♡</span></a>
+      </div>
+    </div>
+  </div>
+
   <a class="chat-bubble" href="sms:+12105591439" aria-label="Text GlowMora">
     <svg class="ic"><use href="#i-chat"/></svg>
     <span>Let's chat!</span>

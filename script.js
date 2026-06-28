@@ -57,3 +57,43 @@ filterBtns.forEach((btn) =>
 
 // ---------- Footer year ----------
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---------- New-client offer popup ----------
+const offerModal = document.getElementById('offer-modal');
+if (offerModal) {
+  const OFFER_KEY = 'glowmora-offer-seen';
+  const openOffer = () => {
+    offerModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  };
+  const closeOffer = () => {
+    offerModal.hidden = true;
+    document.body.style.overflow = '';
+    localStorage.setItem(OFFER_KEY, '1');
+  };
+  // Show once per visitor, ~6s after landing
+  if (!localStorage.getItem(OFFER_KEY)) {
+    setTimeout(openOffer, 6000);
+  }
+  offerModal
+    .querySelectorAll('[data-offer-close]')
+    .forEach((el) => el.addEventListener('click', closeOffer));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !offerModal.hidden) closeOffer();
+  });
+  // Submit to Netlify Forms without a page reload, then show the success state
+  const offerForm = offerModal.querySelector('.offer-form');
+  const offerSuccess = offerModal.querySelector('.offer-success');
+  offerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(offerForm)).toString(),
+    }).finally(() => {
+      offerForm.hidden = true;
+      offerSuccess.hidden = false;
+      localStorage.setItem(OFFER_KEY, '1');
+    });
+  });
+}
