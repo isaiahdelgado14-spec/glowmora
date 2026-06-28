@@ -71,9 +71,15 @@ if (offerModal) {
     document.body.style.overflow = '';
     localStorage.setItem(OFFER_KEY, '1');
   };
-  // Show once per visitor, ~6s after landing
+  // Show once per visitor: 2s after their first click (i.e. once they engage)
   if (!localStorage.getItem(OFFER_KEY)) {
-    setTimeout(openOffer, 6000);
+    document.addEventListener(
+      'click',
+      function onFirstClick() {
+        setTimeout(openOffer, 2000);
+      },
+      { once: true }
+    );
   }
   offerModal
     .querySelectorAll('[data-offer-close]')
