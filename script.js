@@ -81,19 +81,46 @@ if (offerModal) {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !offerModal.hidden) closeOffer();
   });
-  // Submit to Netlify Forms without a page reload, then show the success state
+  // Submit to BOTH MailerLite (so signups land in the email list) and Netlify
+  // Forms (a same-origin backup copy), then show the success state — no reload.
   const offerForm = offerModal.querySelector('.offer-form');
   const offerSuccess = offerModal.querySelector('.offer-success');
+  // MailerLite "GlowMora Website Signups" form → group "Website Signups"
+  const ML_ENDPOINT =
+    'https://assets.mailerlite.com/jsonp/2476666/forms/191552524344362035/subscribe';
   offerForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    const data = new FormData(offerForm);
+    const name = (data.get('name') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+    const phone = (data.get('phone') || '').toString().trim();
+
+    // 1) Add the subscriber to MailerLite. It's a cross-origin request, so we
+    //    fire it "no-cors" (the data still arrives; we just can't read the reply).
+    //    name/email/phone map to MailerLite's standard subscriber fields.
+    fetch(ML_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        'fields[name]': name,
+        'fields[email]': email,
+        'fields[phone]': phone,
+        'ml-submit': '1',
+        anticsrf: 'true',
+      }).toString(),
+    }).catch(() => {});
+
+    // 2) Keep a backup copy in Netlify Forms (same-origin, safe to await-less).
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(offerForm)).toString(),
-    }).finally(() => {
-      offerForm.hidden = true;
-      offerSuccess.hidden = false;
-      localStorage.setItem(OFFER_KEY, '1');
-    });
+      body: new URLSearchParams(data).toString(),
+    }).catch(() => {});
+
+    // 3) Show the success message right away.
+    offerForm.hidden = true;
+    offerSuccess.hidden = false;
+    localStorage.setItem(OFFER_KEY, '1');
   });
 }
