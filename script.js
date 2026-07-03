@@ -71,14 +71,9 @@ if (offerModal) {
     document.body.style.overflow = '';
     // NOTE: closing does NOT set the flag, so it shows again next visit until they sign up
   };
-  // Show 2s after page load on EVERY visit, until they sign up — but never
-  // stack on top of the booking deposit popup if that one is already open.
+  // Show 2s after page load on EVERY visit, until they sign up
   if (!localStorage.getItem(OFFER_KEY)) {
-    setTimeout(() => {
-      const dep = document.getElementById('deposit-modal');
-      if (dep && !dep.hidden) return;
-      openOffer();
-    }, 2000);
+    setTimeout(openOffer, 2000);
   }
   offerModal
     .querySelectorAll('[data-offer-close]')
@@ -127,44 +122,5 @@ if (offerModal) {
     offerForm.hidden = true;
     offerSuccess.hidden = false;
     localStorage.setItem(OFFER_KEY, '1');
-  });
-}
-
-// ---------- Booking deposit popup (booking page) ----------
-// Reminds clients of the 50% non-refundable Zelle deposit AFTER they head off to
-// the Google booking calendar — the popup appears when they return to this tab.
-const depositModal = document.getElementById('deposit-modal');
-if (depositModal) {
-  const openDeposit = () => {
-    depositModal.hidden = false;
-    document.body.style.overflow = 'hidden';
-  };
-  const closeDeposit = () => {
-    depositModal.hidden = true;
-    document.body.style.overflow = '';
-  };
-  let armed = false; // a "book" button was clicked (calendar opening in a new tab)
-  let leftPage = false; // this tab was hidden afterwards (they went to the calendar)
-  // "Book" buttons open the calendar in a new tab (default action) — we just arm
-  // the deposit reminder so it shows once they come back to this page.
-  document.querySelectorAll('[data-book-trigger]').forEach((el) =>
-    el.addEventListener('click', () => {
-      armed = true;
-    })
-  );
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      if (armed) leftPage = true; // they switched to the booking tab
-    } else if (armed && leftPage && depositModal.hidden) {
-      armed = false;
-      leftPage = false;
-      openDeposit(); // they're back — remind them to send the deposit
-    }
-  });
-  depositModal
-    .querySelectorAll('[data-deposit-close]')
-    .forEach((el) => el.addEventListener('click', closeDeposit));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !depositModal.hidden) closeDeposit();
   });
 }
