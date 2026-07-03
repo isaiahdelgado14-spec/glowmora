@@ -218,7 +218,7 @@
           <li><a class="active" href="booking.html">Booking</a></li>
           <li><a href="index.html#reviews">Reviews</a></li>
           <li><a href="index.html#contact">Contact</a></li>
-          <li><a class="btn btn-rose btn-small" href="#booking-form">Book Now <span class="heart">♡</span></a></li>
+          <li><a class="btn btn-rose btn-small" href="#book">Book Now <span class="heart">♡</span></a></li>
         </ul>
       </nav>
     </div>
@@ -243,7 +243,7 @@
     </section>
 
     <!-- ====== BOOKING (Google Appointment Scheduling) ====== -->
-    <section class="section booking-section">
+    <section class="section booking-section" id="book">
       <div class="container">
         <div class="book-wrap">
           <div class="book-card gcal-card reveal">
@@ -260,7 +260,7 @@
                 <li><svg class="ic ic-sm"><use href="#i-pin"/></svg> I travel to you</li>
                 <li><svg class="ic ic-sm"><use href="#i-heart"/></svg> Instant email confirmation</li>
               </ul>
-              <a class="btn btn-rose" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1UM6eiUpcTo-LjoY0oYAYFDBUV98rLrsagtSbPCcXZNFHtbUwiWwNGvAxUNc8h_5TuQ2lgnfh7?gv=true" target="_blank" rel="noopener">Book Your Appointment <span class="heart">♡</span></a>
+              <a class="btn btn-rose" id="book-appt-cta" data-book-trigger href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1UM6eiUpcTo-LjoY0oYAYFDBUV98rLrsagtSbPCcXZNFHtbUwiWwNGvAxUNc8h_5TuQ2lgnfh7?gv=true" target="_blank" rel="noopener">Book Your Appointment <span class="heart">♡</span></a>
               <p class="gcal-cta-note">Opens my live booking calendar in a new tab — pick your date &amp; time in seconds.</p>
             </div>
 
@@ -270,7 +270,7 @@
             <h2 class="panel-title"><svg class="ic"><use href="#i-clip"/></svg> <span class="script-accent">Booking Information</span></h2>
             <div class="policy">
               <h3>Deposit Policy</h3>
-              <p>A non-refundable deposit is required to secure your date. The remaining balance is due on the day of your appointment.</p>
+              <p>A <strong>50% non-refundable deposit</strong> is required to secure your date — sent via Zelle to (210) 559-1439. The remaining balance is due on the day of your appointment.</p>
             </div>
             <div class="heart-divider" aria-hidden="true"><span></span><svg class="ic ic-xs"><use href="#i-heart"/></svg><span></span></div>
             <div class="policy">
@@ -371,6 +371,24 @@
       <a class="to-top" href="#top">Back to top ↑</a>
     </div>
   </footer>
+
+  <!-- ====== ZELLE DEPOSIT POPUP (shows when they go to book) ====== -->
+  <div class="offer-modal" id="deposit-modal" hidden>
+    <div class="offer-backdrop" data-deposit-close></div>
+    <div class="offer-card" role="dialog" aria-modal="true" aria-labelledby="deposit-title">
+      <button class="offer-close" type="button" aria-label="Close" data-deposit-close>&times;</button>
+      <p class="offer-eyebrow">Before you book <span class="heart">♡</span></p>
+      <h2 class="offer-title" id="deposit-title">Secure Your <span class="script-accent">Date</span></h2>
+      <p class="offer-sub">A <strong>50% non-refundable deposit</strong> is required to lock in your appointment. It goes toward your total — the remaining balance is due the day of.</p>
+      <div class="deposit-zelle">
+        <span class="deposit-zelle-label"><svg class="ic ic-sm"><use href="#i-phone"/></svg> Send your deposit via Zelle to</span>
+        <span class="deposit-zelle-handle">(210) 559-1439</span>
+        <span class="deposit-zelle-note">Please include your name so I know it's you 💕</span>
+      </div>
+      <a class="btn btn-rose btn-block" data-deposit-continue href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1UM6eiUpcTo-LjoY0oYAYFDBUV98rLrsagtSbPCcXZNFHtbUwiWwNGvAxUNc8h_5TuQ2lgnfh7?gv=true" target="_blank" rel="noopener">Continue to Booking <span class="heart">♡</span></a>
+      <button type="button" class="offer-decline" data-deposit-close>Maybe later</button>
+    </div>
+  </div>
 
   <!-- ====== NEW-CLIENT OFFER POPUP ====== -->
   <div class="offer-modal" id="offer-modal" hidden>

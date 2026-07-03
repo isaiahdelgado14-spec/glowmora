@@ -71,9 +71,14 @@ if (offerModal) {
     document.body.style.overflow = '';
     // NOTE: closing does NOT set the flag, so it shows again next visit until they sign up
   };
-  // Show 2s after page load on EVERY visit, until they sign up
+  // Show 2s after page load on EVERY visit, until they sign up — but never
+  // stack on top of the booking deposit popup if that one is already open.
   if (!localStorage.getItem(OFFER_KEY)) {
-    setTimeout(openOffer, 2000);
+    setTimeout(() => {
+      const dep = document.getElementById('deposit-modal');
+      if (dep && !dep.hidden) return;
+      openOffer();
+    }, 2000);
   }
   offerModal
     .querySelectorAll('[data-offer-close]')
@@ -122,5 +127,40 @@ if (offerModal) {
     offerForm.hidden = true;
     offerSuccess.hidden = false;
     localStorage.setItem(OFFER_KEY, '1');
+  });
+}
+
+// ---------- Booking deposit popup (booking page) ----------
+// Reminds clients of the 50% non-refundable Zelle deposit right before the
+// Google booking calendar opens.
+const depositModal = document.getElementById('deposit-modal');
+if (depositModal) {
+  const openDeposit = () => {
+    depositModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  };
+  const closeDeposit = () => {
+    depositModal.hidden = true;
+    document.body.style.overflow = '';
+  };
+  // Any "book" button shows the deposit reminder first instead of jumping
+  // straight to the calendar.
+  document.querySelectorAll('[data-book-trigger]').forEach((el) =>
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openDeposit();
+    })
+  );
+  depositModal
+    .querySelectorAll('[data-deposit-close]')
+    .forEach((el) => el.addEventListener('click', closeDeposit));
+  // "Continue to Booking" opens the calendar in a new tab (default action);
+  // just close the modal behind it so it isn't covering the page on return.
+  const depositContinue = depositModal.querySelector('[data-deposit-continue]');
+  if (depositContinue) {
+    depositContinue.addEventListener('click', () => setTimeout(closeDeposit, 0));
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !depositModal.hidden) closeDeposit();
   });
 }
