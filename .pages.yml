@@ -1,0 +1,21 @@
+# Pages CMS config (pagescms.org) — defines what GlowMora can edit from the dashboard.
+# Images uploaded/picked here are stored in the site's images/ folder.
+media:
+  input: images
+  output: images
+
+content:
+  - name: gallery
+    label: Gallery Photos
+    type: file
+    path: data/gallery.json
+    fields:
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Photo, type: image }
+          - { name: title, label: Title (e.g. Golden Glam), type: string }
+          - { name: category, label: Category label (e.g. Soft Glam), type: string }
+          - { name: alt, label: Photo description (for accessibility & Google), type: string }

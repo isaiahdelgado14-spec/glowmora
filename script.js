@@ -41,6 +41,42 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach((el) => el.classList.add('visible'));
 }
 
+// ---------- Gallery (rendered from data/gallery.json, editable in Pages CMS) ----------
+// Small HTML-escaper so CMS-entered text can never break the markup.
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+const galleryGrid = document.getElementById('gallery-grid');
+if (galleryGrid) {
+  fetch('data/gallery.json', { cache: 'no-store' })
+    .then((res) => (res.ok ? res.json() : null))
+    .then((data) => {
+      const photos = data && Array.isArray(data.photos) ? data.photos : null;
+      if (!photos || !photos.length) return; // no data → keep the fallback tiles
+      const html = photos
+        .map((p) => {
+          const src = String(p.image || '').replace(/^\//, ''); // keep paths relative
+          if (!src) return '';
+          const title = escapeHtml(p.title || '');
+          const category = escapeHtml(p.category || '');
+          const alt = escapeHtml(p.alt || p.title || '');
+          return (
+            '<figure class="tile reveal visible">' +
+            '<img class="tile-art" src="' + escapeHtml(src) + '" alt="' + alt + '" loading="lazy">' +
+            '<figcaption><strong>' + title + '</strong><span>' + category + '</span></figcaption>' +
+            '</figure>'
+          );
+        })
+        .join('');
+      if (html) galleryGrid.innerHTML = html;
+    })
+    .catch(() => {}); // network/JSON error → the fallback tiles stay
+}
+
 // ---------- Gallery filters (home page only) ----------
 const filterBtns = document.querySelectorAll('.filter-btn');
 const tiles = document.querySelectorAll('.tile');

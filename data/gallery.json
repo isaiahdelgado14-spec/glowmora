@@ -1,0 +1,22 @@
+{
+  "photos": [
+    {
+      "image": "images/gallery-gold-glam.jpg",
+      "title": "Golden Glam",
+      "category": "Soft Glam",
+      "alt": "Soft glam makeup with gold shimmer eyeshadow and a glossy coral lip"
+    },
+    {
+      "image": "images/gallery-bronzed-glow.png",
+      "title": "Bronzed Glow",
+      "category": "Natural Glam",
+      "alt": "Bronzed natural glam makeup with warm tones and radiant, glowing skin"
+    },
+    {
+      "image": "images/gallery-smoky-glam.png",
+      "title": "Smoky Glam",
+      "category": "Evening Glam",
+      "alt": "Smoky eye glam makeup with defined liner and a soft mauve lip"
+    }
+  ]
+}
