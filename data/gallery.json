@@ -1,6 +1,12 @@
 {
   "photos": [
     {
+      "image": "images/gallery-champagne-glam.jpg",
+      "title": "Champagne Glow",
+      "category": "Soft Glam",
+      "alt": "Soft glam makeup with champagne shimmer eyeshadow and a glossy nude-pink lip"
+    },
+    {
       "image": "images/gallery-gold-glam.jpg",
       "title": "Golden Glam",
       "category": "Soft Glam",
